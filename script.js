@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
     backgroundSky.addEventListener('DOMLoaded', () => {
         scaleLottieObject(1900, 1080, container.querySelector('svg'));
     });
+
+    new Typed('#title-welcome', {
+        strings: ['Rather than using the', 'array to insert strings', 'users with JavaScript disable'],
+        typeSpeed: 50,
+    });
 })
 
 // window.addEventListener('resize', function () {
