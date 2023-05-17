@@ -4,15 +4,33 @@
     position: relative;
 }
 
+#title-welcome-container {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    transform: translateY(8vh);
+}
+
 #title-welcome {
     display: inline;
 }
 
-.typed-cursor {
+#title-welcome-container .typed-cursor {
     font-size: calc(1.375rem + 1.5vw);
+    position: relative;
+    top: -3px;
 }
+
 @media (min-width: 1200px) {
-    .typed-cursor {
+    #title-welcome-container .typed-cursor {
         font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    #title-welcome-container h1,
+    #title-welcome-container .typed-cursor {
+        font-size: calc(1.175rem + 1.5vw);
     }
 }

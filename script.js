@@ -1,38 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // let welcomeBot = bodymovin.loadAnimation({
-    //     container: document.querySelector('#welcome-bot'),
-    //     path: 'https://assets1.lottiefiles.com/packages/lf20_1pxqjqps.json', // todo : replace by file
-    //     renderer: 'svg',
-    //     autoplay: true,
-    //     loop: false,
-    // });
-    // welcomeBot.onComplete = () => {
-    //     document.documentElement.setAttribute('data-bs-theme', 'light')
-    // }
-
-    const container = document.querySelector('#background-sky')
+    const backgroundSkyContainer = document.querySelector('#background-sky');
     const backgroundSky = bodymovin.loadAnimation({
-        container: container,
+        container: backgroundSkyContainer,
         path: './sky_bg.json',
-        renderer: 'svg',
         autoplay: true,
         loop: true,
     });
 
     backgroundSky.addEventListener('DOMLoaded', () => {
-        scaleLottieObject(1900, 1080, container.querySelector('svg'));
+        scaleLottieObject(1900, 1080, backgroundSkyContainer.querySelector('svg'));
     });
 
     new Typed('#title-welcome', {
-        strings: ['Rather than using the', 'array to insert strings', 'users with JavaScript disable'],
+        strings: [
+            'Je suis développeur Front-end',
+            'Je suis développeur Back-end',
+            'Je suis développeur Full-stack',
+            'Je suis Amine Bougassaa^1000',
+            'Bienvenue sur mon portfolio !',
+        ],
         typeSpeed: 50,
     });
 })
 
-// window.addEventListener('resize', function () {
-//     const container = document.querySelector('#background-sky');
-//     scaleLottieObject(1900, 1080, container.querySelector('svg'));
-// })
+window.addEventListener('resize', function () {
+    const container = document.querySelector('#background-sky');
+    scaleLottieObject(1900, 1080, container.querySelector('svg'));
+})
 
 function scaleLottieObject(svgWidth, svgHeight, svgElement) {
     const windowWidth = window.innerWidth, windowHeight = window.innerHeight,
