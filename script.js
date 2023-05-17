@@ -13,47 +13,39 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('#background-sky')
     const backgroundSky = bodymovin.loadAnimation({
         container: container,
-        path: './sky_bg.json', // todo : replace by file
+        path: './sky_bg.json',
         renderer: 'svg',
         autoplay: true,
         loop: true,
     });
 
     backgroundSky.addEventListener('DOMLoaded', () => {
-        const largeurEcran = window.innerWidth;
-        const hauteurEcran = window.innerHeight;
-
-        const [nouvelleLargeur, nouvelleHauteur] = ajusterImage(largeurEcran, hauteurEcran);
-
-        container.querySelector('svg').style.width = nouvelleLargeur;
-        container.querySelector('svg').style.height = nouvelleHauteur;
+        scaleLottieObject(1900, 1080, container.querySelector('svg'));
     });
 })
 
 window.addEventListener('resize', function () {
-    const container = document.querySelector('#background-sky')
-    const largeurEcran = window.innerWidth;
-    const hauteurEcran = window.innerHeight;
-
-    const [nouvelleLargeur, nouvelleHauteur] = ajusterImage(largeurEcran, hauteurEcran);
-
-    container.querySelector('svg').style.width = nouvelleLargeur;
-    container.querySelector('svg').style.height = nouvelleHauteur;
+    const container = document.querySelector('#background-sky');
+    scaleLottieObject(1900, 1080, container.querySelector('svg'));
 })
 
-function ajusterImage(largeurEcran, hauteurEcran, largeurImage = 1900, hauteurImage = 1080) {
-    const rapportEcran = largeurEcran / hauteurEcran;
-    const rapportImage = largeurImage / hauteurImage;
+function scaleLottieObject(svgWidth, svgHeight, svgElement) {
+    const windowWidth = window.innerWidth, windowHeight = window.innerHeight,
+        windowRatio = windowWidth / windowHeight, svgRatio = svgWidth / svgHeight;
+    let newWidth, newHeight;
 
-    if (rapportEcran > rapportImage) {
-        // L'écran est plus large que l'image
-        const nouvelleLargeur = largeurEcran;
-        const nouvelleHauteur = largeurEcran / rapportImage;
-        return [nouvelleLargeur, nouvelleHauteur];
+    if (windowRatio > svgRatio) {
+        // L'écran est plus large que l'image = desktop
+        newWidth = windowWidth;
+        newHeight = (windowWidth / svgRatio) - 12;
     } else {
-        // L'écran est plus haut que l'image
-        const nouvelleHauteur = hauteurEcran;
-        const nouvelleLargeur = hauteurEcran * rapportImage;
-        return [nouvelleLargeur, nouvelleHauteur];
+        // L'écran est plus haut que l'image = mobile
+        newWidth = (windowHeight * svgRatio) + 20;
+        newHeight = windowHeight;
     }
+
+    svgElement.style.transform = `translateX(-${(newWidth/2) - (windowWidth / 2)}px)`;
+    svgElement.style.transform = `translateY(-${(newHeight/2) - (windowHeight / 2)}px)`;
+    svgElement.style.width = newWidth;
+    svgElement.style.height = newHeight;
 }
