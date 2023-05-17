@@ -25,7 +25,7 @@
 #scroll-down {
     opacity: 0;
     position: absolute;
-    top: calc(100vh - 114px);
+    bottom: 20px;
     width: 90px;
     z-index: 1;
     left: 50%;

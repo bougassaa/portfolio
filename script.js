@@ -29,7 +29,8 @@ function registerBackgroundSky() {
             let svg = container.querySelector('svg');
             if (!SKY_SVG_SCALED && svg instanceof Element) {
                 SKY_SVG_SCALED = true;
-                scaleLottieObject(1900, 1080, svg);
+                let height = scaleLottieObject(1900, 1080, svg);
+                document.querySelector('#scroll-down').style.top = (height - 120) + 'px';
             }
         });
     });
@@ -53,4 +54,6 @@ function scaleLottieObject(svgWidth, svgHeight, svgElement) {
     svgElement.style.transform = `translate(-${(newWidth/2) - (windowWidth / 2)}px, -${(newHeight/2) - (windowHeight / 2)}px`;
     svgElement.style.width = newWidth;
     svgElement.style.height = newHeight;
+
+    return newHeight;
 }
