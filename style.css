@@ -22,6 +22,18 @@
     top: -3px;
 }
 
+#scroll-down {
+    visibility: hidden;
+    position: absolute;
+    bottom: 20px;
+    width: 75px;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: displayScrolDown;
+    animation-delay: 2s;
+}
+
 @media (min-width: 1200px) {
     #title-welcome-container .typed-cursor {
         font-size: 2.5rem;
@@ -32,5 +44,14 @@
     #title-welcome-container h1,
     #title-welcome-container .typed-cursor {
         font-size: calc(1.175rem + 1.5vw);
+    }
+}
+
+@keyframes displayScrolDown {
+    from {
+        visibility: hidden;
+    }
+    to {
+        visibility: visible;
     }
 }
