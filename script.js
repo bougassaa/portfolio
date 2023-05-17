@@ -1,15 +1,7 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const backgroundSkyContainer = document.querySelector('#background-sky');
-    const backgroundSky = bodymovin.loadAnimation({
-        container: backgroundSkyContainer,
-        path: './sky_bg.json',
-        autoplay: true,
-        loop: true,
-    });
+let SKY_SVG_SCALED = false;
 
-    backgroundSky.addEventListener('DOMLoaded', () => {
-        scaleLottieObject(1900, 1080, backgroundSkyContainer.querySelector('svg'));
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    registerBackgroundSky();
 
     new Typed('#title-welcome', {
         strings: [
@@ -23,10 +15,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 })
 
-window.addEventListener('resize', function () {
+function registerBackgroundSky() {
     const container = document.querySelector('#background-sky');
-    scaleLottieObject(1900, 1080, container.querySelector('svg'));
-})
+    const animation = bodymovin.loadAnimation({
+        container: container,
+        path: './sky_bg.json',
+        autoplay: true,
+        loop: true,
+    });
+
+    ['data_ready', 'DOMLoaded'].forEach(event => {
+        animation.addEventListener(event, () => {
+            let svg = container.querySelector('svg');
+            if (!SKY_SVG_SCALED && svg instanceof Element) {
+                SKY_SVG_SCALED = true;
+                scaleLottieObject(1900, 1080, svg);
+            }
+        });
+    });
+}
 
 function scaleLottieObject(svgWidth, svgHeight, svgElement) {
     const windowWidth = window.innerWidth, windowHeight = window.innerHeight,
