@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 })
 
-window.addEventListener('resize', function () {
-    const container = document.querySelector('#background-sky');
-    scaleLottieObject(1900, 1080, container.querySelector('svg'));
-})
+// window.addEventListener('resize', function () {
+//     const container = document.querySelector('#background-sky');
+//     scaleLottieObject(1900, 1080, container.querySelector('svg'));
+// })
 
 function scaleLottieObject(svgWidth, svgHeight, svgElement) {
     const windowWidth = window.innerWidth, windowHeight = window.innerHeight,
@@ -44,8 +44,7 @@ function scaleLottieObject(svgWidth, svgHeight, svgElement) {
         newHeight = windowHeight;
     }
 
-    svgElement.style.transform = `translateX(-${(newWidth/2) - (windowWidth / 2)}px)`;
-    svgElement.style.transform = `translateY(-${(newHeight/2) - (windowHeight / 2)}px)`;
+    svgElement.style.transform = `translate(-${(newWidth/2) - (windowWidth / 2)}px, -${(newHeight/2) - (windowHeight / 2)}px`;
     svgElement.style.width = newWidth;
     svgElement.style.height = newHeight;
 }
