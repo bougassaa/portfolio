@@ -1,14 +1,4 @@
-#background-sky {
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-}
-
 #title-welcome-container {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    text-align: center;
     transform: translateY(8vh);
 }
 
@@ -31,7 +21,7 @@
     left: 50%;
     transform: translateX(-50%);
     animation: displayScrollDown 2s ease forwards;
-    animation-delay: 5s;
+    animation-delay: 4s;
 }
 
 @media (min-width: 1200px) {

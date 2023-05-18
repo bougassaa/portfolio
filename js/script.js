@@ -2,18 +2,28 @@ let SKY_SVG_SCALED = false;
 
 document.addEventListener('DOMContentLoaded', function () {
     registerBackgroundSky();
+    registerTitleWelcome();
 
+    ScrollReveal().reveal('.card', {
+        distance: '200px',
+        duration: 1000,
+        easing: 'ease',
+        viewFactor: 1
+    });
+});
+
+function registerTitleWelcome() {
     new Typed('#title-welcome', {
         strings: [
             'Je suis développeur Front-end',
             'Je suis développeur Back-end',
             'Je suis développeur Full-stack',
-            'Je suis Amine Bougassaa^1000',
+            'Je suis Amine Bougassaa^600',
             'Bienvenue sur mon portfolio !',
         ],
         typeSpeed: 50,
     });
-})
+}
 
 function registerBackgroundSky() {
     const container = document.querySelector('#background-sky');
@@ -30,7 +40,7 @@ function registerBackgroundSky() {
             if (!SKY_SVG_SCALED && svg instanceof Element) {
                 SKY_SVG_SCALED = true;
                 let height = scaleLottieObject(1900, 1080, svg);
-                document.querySelector('#scroll-down').style.top = (height - 120) + 'px';
+                document.querySelector('#scroll-down').style.top = (height - 110) + 'px';
             }
         });
     });
