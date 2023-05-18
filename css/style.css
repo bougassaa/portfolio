@@ -34,9 +34,8 @@
     text-align: justify;
 }
 
-.overflow-hidden {
-    height: 60vh;
-    min-height: 500px
+.container-parallax {
+    max-height: 60vh;
 }
 
 @media (min-width: 1200px) {
