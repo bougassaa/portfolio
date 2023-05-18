@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     registerBackgroundSkyLottie();
     registerTitleWelcome();
+    registerParallax();
     registerReveal();
-
-    ScrollReveal().reveal('.card', {
-        distance: '200px',
-        duration: 1300,
-        easing: 'ease',
-        viewFactor: 1
-    });
 });
+
+function registerParallax() {
+    new simpleParallax(document.querySelector('.img-parallax'));
+}
 
 function registerReveal() {
     ScrollReveal().reveal('#hello-reveal', {
@@ -21,8 +19,25 @@ function registerReveal() {
     });
 
     ScrollReveal().reveal('#introduction-reveal', {
-        duration: 2000,
-        viewFactor: 0.6
+        duration: 1600,
+        viewFactor: 0.6,
+        mobile: false
+    });
+
+    ScrollReveal().reveal('#introduction-reveal', {
+        duration: 1600,
+        desktop: false,
+        viewOffset: {
+            bottom: 200
+        }
+    });
+
+    // todo : test remove below
+    ScrollReveal().reveal('.card', {
+        distance: '200px',
+        duration: 1300,
+        easing: 'ease',
+        viewFactor: 1
     });
 }
 

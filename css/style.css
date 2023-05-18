@@ -34,6 +34,11 @@
     text-align: justify;
 }
 
+.overflow-hidden {
+    height: 60vh;
+    min-height: 500px
+}
+
 @media (min-width: 1200px) {
     #title-welcome-container .typed-cursor {
         font-size: 2.5rem;
