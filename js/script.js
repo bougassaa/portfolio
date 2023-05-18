@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         distance: '200px',
         duration: 1000,
         easing: 'ease',
-        viewFactor: 1
+        viewFactor: 0.7
     });
 });
 

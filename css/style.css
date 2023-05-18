@@ -1,5 +1,6 @@
 #background-sky {
     height: 100vh;
+    background: linear-gradient(180deg, rgba(70,41,117,1) 0%, rgba(70,41,117,1) 83%, rgba(255,255,255,1) 90%, rgba(255,255,255,1) 100%);
 }
 
 #title-welcome-container {
