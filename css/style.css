@@ -30,6 +30,10 @@
     animation-delay: 3s;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 @media (min-width: 1200px) {
     #title-welcome-container .typed-cursor {
         font-size: 2.5rem;

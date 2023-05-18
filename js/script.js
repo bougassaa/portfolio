@@ -1,14 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
-    registerBackgroundSky();
+    registerBackgroundSkyLottie();
     registerTitleWelcome();
+    registerReveal();
 
     ScrollReveal().reveal('.card', {
         distance: '200px',
-        duration: 1000,
+        duration: 1300,
         easing: 'ease',
-        viewFactor: 0.7
+        viewFactor: 1
     });
 });
+
+function registerReveal() {
+    ScrollReveal().reveal('#hello-reveal', {
+        distance: '250px',
+        duration: 1300,
+        easing: 'ease',
+        origin: 'left',
+        viewFactor: 1
+    });
+
+    ScrollReveal().reveal('#introduction-reveal', {
+        duration: 2000,
+        viewFactor: 0.6
+    });
+}
 
 function registerTitleWelcome() {
     new Typed('#title-welcome', {
@@ -23,13 +39,12 @@ function registerTitleWelcome() {
     });
 }
 
-function registerBackgroundSky() {
+function registerBackgroundSkyLottie() {
     const container = document.querySelector('#background-sky');
     const animation = bodymovin.loadAnimation({
         container: container,
         path: './assets/lotties/sky_bg.json',
         autoplay: true,
-        loop: true,
     });
 
     ['data_ready', 'DOMLoaded'].forEach(event => {
