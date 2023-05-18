@@ -1,3 +1,7 @@
+#background-sky {
+    height: 100vh;
+}
+
 #title-welcome-container {
     transform: translateY(8vh);
 }

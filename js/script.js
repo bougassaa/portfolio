@@ -40,6 +40,7 @@ function registerBackgroundSky() {
             if (!SKY_SVG_SCALED && svg instanceof Element) {
                 SKY_SVG_SCALED = true;
                 let height = scaleLottieObject(1900, 1080, svg);
+                container.style.height = height + 'px';
                 document.querySelector('#scroll-down').style.top = (height - 110) + 'px';
             }
         });
