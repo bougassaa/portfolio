@@ -27,7 +27,7 @@ function registerBackgroundSky() {
     const container = document.querySelector('#background-sky');
     const animation = bodymovin.loadAnimation({
         container: container,
-        path: './sky_bg.json',
+        path: './assets/lotties/sky_bg.json',
         autoplay: true,
         loop: true,
     });
