@@ -63,7 +63,7 @@ function registerReveal() {
         distance: '200px',
         duration: 1300,
         easing: 'ease',
-        viewFactor: 0.95,
+        viewFactor: 0.80,
         mobile: false
     });
 
@@ -71,7 +71,7 @@ function registerReveal() {
         duration: 1300,
         desktop: false,
         viewOffset: {
-            bottom: 200
+            bottom: 180
         }
     });
 }
