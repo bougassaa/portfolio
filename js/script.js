@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     registerBackgroundSkyLottie();
     registerTitleWelcome();
+    registerTypedCode();
     registerParallax();
     registerReveal();
 });
@@ -9,9 +10,24 @@ function registerParallax() {
     new simpleParallax(document.querySelectorAll('.img-parallax'));
 }
 
+function registerTypedCode() {
+    new Typed('#typed-code', {
+        strings: [`
+            <span class="typed-statement">function</span> <span class="typed-func-name">sayHelloToVisitor</span>() {<br>
+            <span class="typed-tab"></span>console.log(<span class="typed-string">"Amine te dis bonjour &#x1F44B;"</span>);<br>
+            }<br>
+            <span class="typed-comment">// call the function</span><br>
+            <span class="typed-func-name">sayHelloToVisitor</span>();
+        `],
+        typeSpeed: 25,
+        loop: true
+    });
+}
+
 function registerReveal() {
     ScrollReveal().reveal('#hello-reveal', {
         distance: '250px',
+        delay: 300,
         duration: 1400,
         easing: 'ease',
         origin: 'left',

@@ -30,12 +30,37 @@
     animation-delay: 3s;
 }
 
+#typed-code {
+    font-family: monospace;
+}
+
 .text-justify {
     text-align: justify;
 }
 
 .container-parallax {
     max-height: 60vh;
+}
+
+.typed-statement {
+    color: #fc710f;
+}
+
+.typed-func-name {
+    color: #fca90f;
+}
+
+.typed-tab {
+    display: inline-block;
+    width: 2rem;
+}
+
+.typed-comment {
+    color: #888888;
+}
+
+.typed-string {
+    color: #4b8600;
 }
 
 @media (min-width: 768px) {
