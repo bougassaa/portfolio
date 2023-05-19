@@ -1,10 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
     registerBackgroundSkyLottie();
     registerTitleWelcome();
+    registerScrollDown();
     registerTypedCode();
     registerParallax();
     registerReveal();
 });
+
+function registerScrollDown() {
+    document.querySelector('#scroll-down')
+        .addEventListener('click', function () {
+        window.scrollTo(0, document.querySelector('#introduction-reveal').offsetTop - 40);
+    });
+}
 
 function registerParallax() {
     new simpleParallax(document.querySelectorAll('.img-parallax'));
@@ -21,7 +29,7 @@ function registerTypedCode() {
             <span class="typed-func-name">sayHelloToVisitor</span>();
         `],
             backDelay: 1400,
-            typeSpeed: 50,
+            typeSpeed: num === '2' ? 30 : 50,
             loop: true,
         });
     });

@@ -1,3 +1,7 @@
+body {
+    scroll-behavior: smooth;
+}
+
 #background-sky {
     height: 100vh;
     background: linear-gradient(180deg, rgba(70,41,117,1) 0%, rgba(70,41,117,1) 83%, rgba(255,255,255,1) 90%, rgba(255,255,255,1) 100%);
@@ -18,6 +22,7 @@
 }
 
 #scroll-down {
+    cursor: pointer;
     opacity: 0;
     position: absolute;
     max-width: 20vw;
