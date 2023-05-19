@@ -48,10 +48,6 @@ body {
     text-align: justify;
 }
 
-.container-parallax {
-    max-height: 60vh;
-}
-
 .typed-statement {
     color: #fc710f;
 }

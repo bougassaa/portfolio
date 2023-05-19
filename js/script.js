@@ -63,7 +63,7 @@ function registerReveal() {
         distance: '200px',
         duration: 1300,
         easing: 'ease',
-        viewFactor: 0.80,
+        viewFactor: 0.60,
         mobile: false
     });
 
