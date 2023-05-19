@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function registerParallax() {
-    new simpleParallax(document.querySelector('.img-parallax'));
+    new simpleParallax(document.querySelectorAll('.img-parallax'));
 }
 
 function registerReveal() {
     ScrollReveal().reveal('#hello-reveal', {
         distance: '250px',
-        duration: 1300,
+        duration: 1400,
         easing: 'ease',
         origin: 'left',
         viewFactor: 1
@@ -20,7 +20,7 @@ function registerReveal() {
 
     ScrollReveal().reveal('#introduction-reveal', {
         duration: 1600,
-        viewFactor: 0.6,
+        viewFactor: 0.5,
         mobile: false
     });
 
@@ -32,12 +32,20 @@ function registerReveal() {
         }
     });
 
-    // todo : test remove below
-    ScrollReveal().reveal('.card', {
+    ScrollReveal().reveal('.schools', {
         distance: '200px',
         duration: 1300,
         easing: 'ease',
-        viewFactor: 1
+        viewFactor: 0.95,
+        mobile: false
+    });
+
+    ScrollReveal().reveal('.schools', {
+        duration: 1300,
+        desktop: false,
+        viewOffset: {
+            bottom: 200
+        }
     });
 }
 
