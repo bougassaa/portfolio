@@ -30,7 +30,12 @@
     animation-delay: 3s;
 }
 
-#typed-code {
+.typed-code-container {
+    width: 30rem;
+    transform: translateY(-50%);
+}
+
+.typed-code {
     font-family: monospace;
 }
 

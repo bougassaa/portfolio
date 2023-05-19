@@ -11,16 +11,19 @@ function registerParallax() {
 }
 
 function registerTypedCode() {
-    new Typed('#typed-code', {
-        strings: [`
+    ['1', '2'].forEach(num => {
+        new Typed('#typed-code-' + num, {
+            strings: [`
             <span class="typed-statement">function</span> <span class="typed-func-name">sayHelloToVisitor</span>() {<br>
             <span class="typed-tab"></span>console.log(<span class="typed-string">"Amine te dis bonjour &#x1F44B;"</span>);<br>
             }<br>
             <span class="typed-comment">// call the function</span><br>
             <span class="typed-func-name">sayHelloToVisitor</span>();
         `],
-        typeSpeed: 25,
-        loop: true
+            backDelay: 1400,
+            typeSpeed: 50,
+            loop: true,
+        });
     });
 }
 
