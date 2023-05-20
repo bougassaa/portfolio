@@ -1,5 +1,6 @@
+registerBackgroundSkyLottie();
+
 document.addEventListener('DOMContentLoaded', function () {
-    registerBackgroundSkyLottie();
     registerTitleWelcome();
     registerScrollDown();
     registerTypedCode();
