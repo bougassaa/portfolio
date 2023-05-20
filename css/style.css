@@ -82,25 +82,19 @@ body {
 .badge-info {
     background: #2D3749;
     color: #4FC9DA;
-    outline: solid 1px #046280;
+    border: solid 1px #046280;
 }
 
 .badge-success {
     background: #2D3E35;
     color: #B8D935;
-    outline: solid 1px #849b28;
-}
-
-.badge-success {
-    background: #2D3E35;
-    color: #B8D935;
-    outline: solid 1px #849b28;
+    border: solid 1px #849b28;
 }
 
 .badge-warning {
     background: #3F3A2B;
     color: #E8C444;
-    outline: solid 1px #a28b2d;
+    border: solid 1px #a28b2d;
 }
 
 @media (min-width: 768px) {
