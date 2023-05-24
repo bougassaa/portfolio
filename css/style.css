@@ -97,6 +97,16 @@ body {
     border: solid 1px #a28b2d;
 }
 
+.contribution__logo {
+    min-width: 4rem;
+    max-width: 4rem;
+}
+
+.contact__logo {
+    min-width: 2rem;
+    max-width: 2rem;
+}
+
 @media (min-width: 768px) {
     .schools--info {
         width: 280px;

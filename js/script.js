@@ -5,8 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
     registerScrollDown();
     registerTypedCode();
     registerParallax();
+    registerTooltip();
     registerReveal();
 });
+
+function registerTooltip() {
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        .forEach(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+}
 
 function registerScrollDown() {
     document.querySelector('#scroll-down')
